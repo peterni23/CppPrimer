@@ -20,16 +20,19 @@ int main(int argc,char **argv){
   if(argc!=3)
 	  throw runtime_error("wrong number of arguments");
   ifstream fin;
+  //打开词典对照文件
   if(!open_file(fin,argv[1]))
 	  throw runtime_error("no transformation file");
   while(fin>>key>>value)
 	  trans_map.insert(make_pair(key,value));
   ifstream input;
+  //打开要翻译的文件
   if(!open_file(input,argv[2]))
 	  throw runtime_error("no input file");
   string line,word;
   while(getline(input,line)){
 	  istringstream is(line);
+	  //如果是第一个单词的话，就不输出空格
 	  bool firstword = true;
 	  while(is>>word){
 		  if(trans_map.count(word))  
