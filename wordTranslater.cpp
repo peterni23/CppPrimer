@@ -6,6 +6,7 @@
 #include<fstream>
 #include<sstream>
 using namespace std;
+//c++ primer 第10.3节单词转换map对象
 
 ifstream& open_file(ifstream &in,const string &file){
 	in.close();
