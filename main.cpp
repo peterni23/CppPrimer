@@ -14,12 +14,12 @@ string make_plural(size_t count,const string &str1,const string &str2){
 }
 
 void print_result(const set<TextQuery::line_no> &se,const TextQuery &tq,const string &str){
-	//ÏÈÊä³ö¶àÉÙĞĞ
+	//å…ˆè¾“å‡ºå¤šå°‘è¡Œ
 	typedef set<TextQuery::line_no>::size_type set_no;
 	set_no count = se.size();
-	cout<<str<<" ³öÏÖÁË "<<count<<" "<<make_plural(count,"time","s")<<endl;
+	cout<<str<<" å‡ºç°äº† "<<count<<" "<<make_plural(count,"time","s")<<endl;
 	for(set<TextQuery::line_no>::const_iterator it = se.begin();it!=se.end();it++)
-		cout<<"\t"<<"£¨µÚ"<<(*it)+1<<"ĞĞ£©  "<<tq.text_line(*it)<<endl;
+		cout<<"\t"<<"ï¼ˆç¬¬"<<(*it)+1<<"è¡Œï¼‰  "<<tq.text_line(*it)<<endl;
 }
 
 
